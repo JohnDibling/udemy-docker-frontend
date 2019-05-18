@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t thinkpiece/udemy-docker-frontend -f Dockerfile.dev .
+script:
+  - docker run thinkpiece/udemy-docker-frontend npm run test:ci
